@@ -32,7 +32,7 @@ jobs:
         run: unzip detector-pdk-android-project.zip -d project
 
       - name: Build APK
-        run: cd project && gradle assembleDebug
+        run: cd project && gradle --no-daemon --refresh-dependencies assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
